@@ -1,0 +1,67 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mocha Tests</title>
+    <link href="lib/mocha.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    
+</head>
+<body>
+
+  <!-- 👍 YOUR HTML HERE 👍 -->
+  <embed name="bg" id="bg" src="./bg.mp3" loop="true" hidden="true" autostart="true">
+  <div class="container">
+    <!-- players name -->
+    <div class="start-form" id="startForm">
+      <h1>Rejin Chronicle</h1>
+      <h2>Your Adventure begins here!</h2>
+      <input type="text" id="playersName" placeholder="Insert Your Name"/>
+      <div>
+        <button onclick="startGame()" class="start-btn" >Start Game</button>
+      </div>
+    </div>
+    <!-- Start Game -->
+    <div class="hidden" id="gameItem">
+      <div class="images">
+        <img src="lib/karina.png" onclick="rest(hero)" id="inn"/>
+        <img src="lib/dagger.png" onclick="pickUpItem(hero, dagger)" id="dagger"/>
+        <img class="hidden" src="lib/sword.png" onclick="pickUpItem(hero, sword)" id="sword"/>
+        <img src="lib/miya.png" onclick="fightEnemy(enemyMiya)" id="Miya"/>
+        <img class="hidden" src="lib/pharsa.png" onclick="fightEnemy(enemyBoss)" id="Pharsa"/>
+      </div>
+      <div class="hero-stats">
+        <p>Hero Name: <span id="heroName"></span> </p>
+        <p>Health: <span id="heroHealth"></span> </p>
+        <p>Damage: <span id="heroDamage"></span> </p>
+        <p>Weapon: <span id="heroWeapon"></span> </p>
+      </div>
+      <div class="enemy-stats">
+        <p>Enemy Name: <span id="enemyName"></span> </p>
+        <p>Health: <span id="enemyHealth"></span> </p>
+        <p>Damage: <span id="enemyDamage"></span> </p>
+        <p>Weapon: <span id="enemyWeapon"></span> </p>
+      </div>
+      <img src="lib/bag.png" onclick="equipWeapon(hero)" id="bag"/>
+    </div>
+
+  </div>
+ 
+
+  <!-- I RECOMMEND YOU LEAVE THE REST UNTOUCHED -->
+  <button onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>
+
+  <div id="mocha">
+  <!-- MOCHA TEST FEEDBACK WILL BE RENDERED HERE -->
+  </div>
+
+  <script src="lib/chai.js"></script>
+  <script src="lib/mocha.js"></script>
+  <script src="lib/sinon.js"></script>
+  <script>mocha.setup('bdd')</script>
+  <script src="YOUR_JAVASCRIPT_HERE.js"></script>
+  <script src="lib/game_logic.test.js"></script>
+
+</body>
+</html>
