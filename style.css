@@ -36,6 +36,9 @@ img {
   border: 10px solid #153a17a1;
   text-align: center;
 }
+.start-form h1, h2 {
+  text-shadow: 3px 3px #ffffff9c;
+}
 
 .hidden {
   display: none !important;
