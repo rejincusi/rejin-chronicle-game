@@ -17,7 +17,7 @@ const enemyMiya = {
   health: 10,
   weapon: {
     type: 'Arrow',
-    damage: 3
+    damage: 2
   }
 }
 
@@ -28,7 +28,7 @@ const enemyBoss = {
   health: 10,
   weapon: {
     type: 'Dark Magic',
-    damage: 5
+    damage: 4
   }
 }
 
@@ -195,4 +195,4 @@ function loadEnemyBoss() {
   fightBoss = true
 }
 
-const bg = document.getElementById('bg').loop = true;
+document.getElementById('bg').loop = true;
